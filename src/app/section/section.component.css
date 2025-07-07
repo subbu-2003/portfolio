@@ -1,0 +1,96 @@
+@keyframes beat {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+}
+
+.animate-beat {
+  animation: beat 1s infinite ease-in-out;
+}
+
+.perspective {
+  perspective: 1200px;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.group:hover .group-hover\:rotate-y-180 {
+  transform: rotateY(180deg);
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+/* Hide scrollbar for Webkit (Chrome, Safari) */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.scroll-container {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.animate-floating {
+  animation: float 6s ease-in-out infinite;
+}
+.delay-1000 { animation-delay: 1s; }
+.delay-1500 { animation-delay: 1.5s; }
+.delay-2000 { animation-delay: 2s; }
+.delay-2500 { animation-delay: 2.5s; }
+.delay-3000 { animation-delay: 3s; }
+@keyframes blink {
+  0%, 100% {
+    box-shadow: 0 0 0px #f97316;
+  }
+  50% {
+    box-shadow: 0 0 15px #f97316;
+  }
+}
+
+.animate-blink {
+  animation: blink 1.5s ease-in-out infinite;
+}
+/* In global styles.css or component.scss */
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.project-transition {
+  animation: fadeSlideIn 0.5s ease;
+}

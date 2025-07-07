@@ -1,0 +1,440 @@
+<section id="home"
+  class="h-screen w-full bg-cover bg-center bg-no-repeat flex items-center justify-center text-white font-[Cambria] relative px-4 sm:px-6 md:px-20 overflow-hidden"
+  style="background-image: url('assets/bg-img/bg.jpg'); animation: fadeIn 2s ease-in-out;">
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-10 w-full max-w-[1400px] px-4 sm:px-8 pt-12 animate-fade-up animate-once animate-delay-500">
+
+    <!-- ⬅️ Left Content -->
+    <div class="text-center md:text-left space-y-4 animate-fade-left animate-delay-700 animate-once">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 animate__animated animate__fadeInDown">
+        {{ greetingText }}
+      </h2>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-5 animate__animated animate__fadeInUp">
+        {{ nameText }}
+      </h1>
+      <p class="text-base sm:text-lg md:text-xl text-gray-200 mb-7 leading-relaxed animate__animated animate__fadeIn animate__delay-1s">
+        I’m a passionate <span class="text-pink-400 font-semibold">UI/UX Designer</span> and
+        <span class="text-blue-400 font-semibold">Full Stack Developer</span> based in India. I specialize in building responsive, scalable web applications with clean code, intuitive design, and seamless user experiences.
+      </p>
+
+      <!-- Say Hello Button -->
+      <button
+        (click)="openPopup()"
+        class="relative inline-flex items-center justify-center px-7 py-2.5 text-base sm:text-lg font-semibold text-white bg-purple-600 rounded-md overflow-hidden transition-all duration-500 ease-in-out transform hover:scale-105 hover:bg-purple-700 shadow-lg hover:shadow-purple-500/50 group animate__animated animate__fadeInUp animate__delay-2s"
+      >
+        <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-500 via-purple-700 to-purple-500 opacity-30 blur-lg transition duration-500 group-hover:opacity-60"></span>
+        <span class="relative z-10">Say Hello!</span>
+      </button>
+    </div>
+
+    <!-- ➡️ Right Image with Brackets -->
+    <div class="relative flex justify-center items-center w-full overflow-hidden px-4 sm:px-0 animate-fade-in animate-delay-1000">
+      <!-- Glow Circle -->
+      <div class="absolute w-[320px] h-[320px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] rounded-full bg-gradient-to-r from-white to-transparent opacity-40 blur-2xl z-0 animate-pulse"></div>
+      
+      <!-- Bracket Symbols -->
+      <div class="absolute left-0 top-0 text-red-500 text-6xl sm:text-8xl md:text-9xl z-10 animate-bounce">
+        &lt;
+      </div>
+      <div class="absolute right-0 bottom-0 text-red-500 text-6xl sm:text-8xl md:text-9xl z-10 animate-bounce">
+        /&gt;
+      </div>
+
+      <!-- Main Image -->
+      <img
+        src="assets/bg-img/chat.png"
+        alt="Developer"
+        class="relative z-20 w-[360px] sm:w-[500px] md:w-[700px] lg:w-[880px] rounded-lg shadow-lg animate__animated animate__zoomIn animate__delay-1s"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- skill Section -->
+
+<!-- skills.component.html -->
+<section id="skill" class="relative bg-black bg-cover bg-center bg-no-repeat py-12 px-6"
+style="background-image: url('assets/bg-img/skill.jpg');">
+
+ <!-- Section Heading -->
+  <div class="text-center mb-10">
+    <h2 class="text-3xl md:text-4xl font-bold text-white">My Skills</h2>
+    <div class="w-20 h-1 bg-yellow-400 mx-auto mt-3"></div>
+  </div>
+
+
+  <!-- Scrollable Container -->
+  <div
+    #scrollContainer
+    class="max-w-[1280px] mx-auto overflow-x-auto scroll-smooth scroll-container"
+  >
+    <div class="flex gap-6 w-max snap-x snap-mandatory">
+      <div
+        *ngFor="let skill of skills"
+        class="w-[90vw] sm:w-[70vw] md:w-[300px] h-[250px] flex-shrink-0 snap-start perspective group relative">
+        <div
+          class="relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180"
+        >
+          <!-- Front Side -->
+          <!-- Front Side -->
+<div class="absolute w-full h-full rounded-xl backface-hidden shadow-lg border border-white overflow-hidden">
+  
+  <!-- Semi-transparent Background Layer -->
+  <div class="absolute inset-0 bg-[#1a1a1a] opacity-60 rounded-xl z-0"></div>
+
+  <!-- Content Layer (fully opaque) -->
+  <div class="relative z-10 text-white p-6 flex flex-col items-center justify-center">
+    <img
+      [src]="skill.icon"
+      [alt]="skill.title"
+      class="w-50 h-30 object-contain mb-4"
+    />
+    <h3 class="text-xl font-bold mb-2">{{ skill.title }}</h3>
+    <div class="w-8 h-[2px] bg-yellow-400"></div>
+  </div>
+
+</div>
+
+
+          <!-- Back Side -->
+         <!-- Back Side -->
+<!-- Back Side -->
+<div class="absolute w-full h-full rounded-xl backface-hidden transform rotate-y-180 shadow-lg border border-white overflow-hidden flex items-center justify-center">
+
+  <!-- Semi-transparent background layer -->
+  <div class="absolute inset-0 bg-[#121212] opacity-60 rounded-xl z-0"></div>
+
+  <!-- Content Layer -->
+  <div class="relative z-10 text-white p-6 flex flex-col items-center justify-center text-center">
+    <h3 class="text-xl font-semibold mb-2">{{ skill.title }}</h3>
+    <p class="text-sm text-gray-300">
+      {{ skill.description }}
+    </p>
+  </div>
+
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Page -->
+
+<!-- about-me.component.html -->
+<section id="about"
+  class="relative min-h-screen bg-cover bg-center bg-no-repeat text-white px-4 text-center font-serif overflow-hidden flex items-center justify-center"
+  style="background-image: url('assets/bg-img/bg.jpg');"
+>
+  <!-- Floating Tech Icons -->
+  <div class="absolute inset-0 pointer-events-none z-0">
+    <img src="assets/skills-img/aws.png" class="absolute w-14 sm:w-20 animate-floating delay-1000" style="bottom: 20%; left: 10%;" alt="AWS" />
+    <img src="assets/skills-img/laravel.png" class="absolute w-14 sm:w-20 animate-floating delay-2000" style="top: 45%; right: 10%;" alt="Laravel" />
+    <img src="assets/skills-img/github.png" class="absolute w-14 sm:w-20 animate-floating delay-2000" style="top: 10%; left: 5%;" alt="GitHub" />
+    <img src="assets/skills-img/database.png" class="absolute w-14 sm:w-20 animate-floating delay-2000" style="top: 35%; left: 10%;" alt="GitHub" />
+    <img src="assets/skills-img/angular1.png" class="absolute w-14 sm:w-20 animate-floating delay-2500" style="bottom: 8%; right: 8%;" alt="Angular" />
+    <img src="assets/skills-img/reactive.png" class="absolute w-14 sm:w-20 animate-floating delay-3000" style="top: 25%; right: 15%;" alt="React" />
+  </div>
+
+  <!-- Main Content -->
+  <div class="container max-w-xl mx-auto px-4 sm:px-6 z-10 relative py-12 sm:py-20">
+    
+    <!-- Subheading -->
+    <p class="uppercase tracking-widest text-xs sm:text-sm text-gray-300 mb-2 sm:mb-3">
+      A Bit About Me
+    </p>
+
+    <!-- Main Heading -->
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-orange-500 mb-6 sm:mb-8 leading-snug">
+      Who Am I?
+    </h2>
+
+    <!-- Profile Image with Arrows -->
+    <div class="relative flex justify-center items-center mb-6 sm:mb-8">
+      <!-- Left Arrow -->
+     <div class="absolute left-[-24px] sm:left-[-40px] text-orange-400 text-3xl sm:text-5xl animate-bounce">
+  &lt;/&gt;
+</div>
+
+     <!-- Profile Image with Blinking Animation -->
+<div class="animate-blink border-[4px] sm:border-[6px] border-orange-500 w-[180px] sm:w-[220px] md:w-[260px] h-[180px] sm:h-[220px] md:h-[260px] rounded-full overflow-hidden shadow-xl z-10">
+  <img 
+    src="assets/bg-img/subbu1.png" 
+    alt="Profile" 
+    class="w-full h-full object-cover"
+  />
+</div>
+
+
+    <!-- Right Bracket Symbol -->
+<div class="absolute right-[-24px] sm:right-[-40px] text-orange-400 text-3xl sm:text-5xl animate-bounce">
+  &lt;/&gt;
+</div>
+    </div>
+
+    <!-- Description -->
+    <p class="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed max-w-2xl mx-auto mb-8 px-2 sm:px-0">
+      Hi I'm Jack Smith. I'm a passionate UI/UX Designer and Full Stack Developer based in India. I specialize in building responsive, scalable web applications with clean code, intuitive design, and seamless user experiences.
+    </p>
+
+    <!-- Download Button -->
+    <a 
+      href="assets/Subbu_resume.pdf" 
+      download 
+      class="inline-block bg-orange-500 text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full shadow-lg hover:bg-orange-600 transform transition duration-300 hover:scale-105"
+    >
+      Download My CV
+    </a>
+  </div>
+</section>
+
+<!-- Working Flow -->
+
+<section 
+  class="relative bg-black bg-cover bg-center bg-no-repeat py-16 px-6"
+  style="background-image: url('assets/bg-img/skill.jpg');"
+>
+  <!-- Section Heading -->
+  <div class="text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-white">Working Flow</h2>
+    <div class="w-20 h-1 bg-yellow-400 mx-auto mt-3"></div>
+  </div>
+
+  <!-- Steps Grid -->
+  <div class="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-10">
+    <ng-container *ngFor="let step of steps; let i = index; let last = last">
+      
+      <!-- Step Card -->
+      <div
+        class="relative bg-[#1a1a1a] border border-yellow-400 rounded-lg p-6 text-center w-full sm:w-[260px] hover:scale-105 transition-transform duration-300 shadow-lg"
+      >
+        <img [src]="step.icon" [alt]="step.title" class="mx-auto w-12 h-12 mb-4 animate-bounce" />
+        <h3 class="text-xl font-semibold mb-2 text-white">{{ step.title }}</h3>
+        <p class="text-gray-300 text-sm">{{ step.description }}</p>
+      </div>
+
+      <!-- Arrow between cards (not after last one) -->
+      <div *ngIf="!last">
+        <!-- For desktop (right arrow) -->
+        <div class="hidden sm:block text-yellow-400 text-4xl sm:text-5xl font-bold animate-pulse">
+          &rarr;
+        </div>
+        <!-- For mobile (down arrow) -->
+        <div class="block sm:hidden text-yellow-400 text-4xl font-bold animate-pulse my-2">
+          &darr;
+        </div>
+      </div>
+
+    </ng-container>
+  </div>
+</section>
+<!-- Projects -->
+
+<!-- Projects Section -->
+<section id="project"
+  class="pt-20 px-4 pb-20 bg-cover bg-center bg-no-repeat"
+  style="background-image: url('assets/bg-img/bg.jpg');"
+>
+  <!-- Section Heading -->
+  <div class="text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-white">My Projects</h2>
+    <div class="w-20 h-1 bg-yellow-400 mx-auto mt-3"></div>
+  </div>
+
+  <!-- Project Container -->
+  <div class="relative max-w-7xl mx-auto rounded-3xl overflow-hidden shadow-xl border border-white">
+    
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-[#1a1a1a] opacity-60 rounded-3xl z-0"></div>
+
+    <!-- Foreground content -->
+    <div class="relative z-10 px-6 py-12 md:py-16 md:px-10 min-h-[400px] flex items-center">
+      
+      <!-- Navigation Arrows -->
+      <div class="absolute top-4 right-4 flex space-x-3 z-20">
+        <button (click)="prevProject()" class="bg-white p-2 rounded-full hover:bg-gray-300 shadow-md transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button (click)="nextProject()" class="bg-white p-2 rounded-full hover:bg-gray-300 shadow-md transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Project Content -->
+      <div
+        class="flex flex-col md:flex-row items-center md:items-center justify-between gap-12 md:gap-20 w-full"
+        [ngClass]="animationClass"
+      >
+        <!-- Image -->
+        <div class="w-[220px] h-[220px] md:w-[300px] md:h-[300px] flex-shrink-0">
+          <img
+            [src]="projects[currentProjectIndex].image"
+            alt="Project"
+            class="w-full h-full object-contain rounded-full border-4 border-white bg-amber-50 shadow-xl"
+          />
+        </div>
+
+        <!-- Center Content & Tech -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-10">
+          <!-- Text Content -->
+          <div class="text-white flex-1">
+            <h3 class="text-2xl md:text-3xl font-bold mb-2">
+              {{ projects[currentProjectIndex].title }}
+            </h3>
+            <p class="text-sm md:text-base mb-6">
+              {{ projects[currentProjectIndex].description }}
+            </p>
+            <a
+              [href]="projects[currentProjectIndex].link"
+              class="inline-block bg-blue-800 text-white px-5 py-2 rounded-md hover:bg-blue-900 transition"
+            >
+              Explore More
+            </a>
+          </div>
+
+          <!-- Technology Used -->
+          <div class="bg-black bg-opacity-60 text-white p-4 rounded-md shadow-lg min-w-[200px]">
+            <h4 class="text-yellow-400 font-bold mb-2">Technology Used</h4>
+            <ul class="text-sm list-disc list-inside space-y-1">
+              <li *ngFor="let tech of projects[currentProjectIndex].technologies">{{ tech }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contact"
+  class="pt-16 px-4 pb-16 bg-cover bg-center bg-no-repeat"
+  style="background-image: url('assets/bg-img/bg.jpg');"
+>
+  <!-- Section Heading -->
+  <div class="text-center mb-10">
+    <h2 class="text-3xl md:text-4xl font-bold text-white">Contact Me</h2>
+    <div class="w-20 h-1 bg-yellow-400 mx-auto mt-3"></div>
+  </div>
+
+  <!-- Contact Container with dark overlay -->
+  <div class="relative max-w-7xl mx-auto rounded-3xl overflow-hidden shadow-xl border border-white">
+    
+    <!-- Background Overlay -->
+    <div class="absolute inset-0 bg-[#1a1a1a] opacity-60 rounded-3xl z-0"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 px-6 py-6 md:py-8 md:px-10 flex items-center">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full items-center">
+        
+        <!-- Left Profile Info -->
+<div class="p-4 text-white flex flex-col items-center md:items-start space-y-4">
+  <!-- Image -->
+  <img
+    src="assets/bg-img/contact-us.jpg"
+    alt="Profile"
+    class="rounded-xl object-cover w-full h-[180px] md:h-[220px] mb-2"
+  />
+
+  <!-- Content Below Image -->
+  <div class="text-center md:text-left w-full space-y-2">
+    <h2 class="text-2xl md:text-3xl font-bold text-white">Get in touch</h2>
+    <p class="italic font-semibold text-white">
+      We believe sustainability is vitally important.
+    </p>
+    <p class="text-white text-sm leading-relaxed">
+      Etiam sit amet convallis erat – class aptent taciti sociosqu ad litora torquent per conubia!
+      Maecenas gravida lacus. Lorem etiam sit amet convallis erat.
+    </p>
+  </div>
+
+  <!-- Social Icons -->
+ <div class="flex space-x-4 mt-4">
+  <a href="#" class="text-white text-2xl hover:text-pink-400" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://wa.me/yourphonenumber" target="_blank" class="text-white text-2xl hover:text-green-400" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="text-white text-2xl hover:text-blue-400" aria-label="LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  <a href="https://github.com/yourusername" target="_blank" class="text-white text-2xl hover:text-gray-300" aria-label="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+  <a href="mailto:yourmail@example.com" class="text-white text-2xl hover:text-yellow-400" aria-label="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+</div>
+
+</div>
+
+
+        <!-- Right Contact Form -->
+        <form class="space-y-3 text-white w-full">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold mb-1">YOUR NAME</label>
+              <input type="text" class="w-full p-2 rounded-md bg-transparent border border-white text-white focus:outline-none" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-1">PHONE NO</label>
+              <input type="text" class="w-full p-2 rounded-md bg-transparent border border-white text-white focus:outline-none" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold mb-1">GMAIL</label>
+            <input type="email" class="w-full p-2 rounded-md bg-transparent border border-white text-white focus:outline-none" />
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold mb-1">SUBJECT</label>
+            <input type="text" class="w-full p-2 rounded-md bg-transparent border border-white text-white focus:outline-none" />
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold mb-1">YOUR MESSAGE</label>
+            <textarea rows="3" class="w-full p-2 rounded-md bg-transparent border border-white text-white focus:outline-none"></textarea>
+          </div>
+
+          <!-- Submit Button -->
+     <div class="flex justify-center mt-4">
+  <button
+    type="submit"
+    class="bg-purple-600 text-white text-base sm:text-lg px-7 py-2.5 rounded-md hover:bg-purple-700 transition duration-300 flex items-center gap-2"
+  >
+    Send Message
+    <i class="fas fa-arrow-right text-white"></i>
+  </button>
+</div>
+
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
