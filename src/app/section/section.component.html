@@ -12,11 +12,10 @@
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-5 animate__animated animate__fadeInUp">
         {{ nameText }}
       </h1>
-      <p class="text-base sm:text-lg md:text-xl text-gray-200 mb-7 leading-relaxed animate__animated animate__fadeIn animate__delay-1s">
-        I’m a passionate <span class="text-pink-400 font-semibold">UI/UX Designer</span> and
-        <span class="text-blue-400 font-semibold">Full Stack Developer</span> based in India. I specialize in building responsive, scalable web applications with clean code, intuitive design, and seamless user experiences.
-      </p>
-
+     <p class="text-base sm:text-lg md:text-xl text-gray-200 mb-7 leading-relaxed animate__animated animate__fadeIn animate__delay-1s">
+  I’m a dedicated <span class="text-pink-400 font-semibold">Web Developer</span> and
+  <span class="text-blue-400 font-semibold">Mobile Application Developer</span>. I specialize in creating responsive websites and high-performance mobile apps with clean code, modern design, and seamless user experiences.
+</p>
       <!-- Say Hello Button -->
       <button
         (click)="openPopup()"
@@ -25,8 +24,58 @@
         <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-500 via-purple-700 to-purple-500 opacity-30 blur-lg transition duration-500 group-hover:opacity-60"></span>
         <span class="relative z-10">Say Hello!</span>
       </button>
+
+
+      <div
+  *ngIf="showPopup"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-[rgba(0,0,0,0.7)]"
+>
+  <div
+    class="relative bg-white bg-opacity-50 p-6 rounded-xl w-[90%] max-w-md shadow-lg overflow-hidden"
+    style="background-image: url('assets/bg-img/popup-bg.jpg'); background-size: cover; background-position: center;"
+  >
+    <!-- Dark Overlay Inside Popup -->
+    <div class="absolute inset-0 bg-[#1a1a1a] opacity-60 z-0 rounded-xl"></div>
+
+    <!-- Close Button -->
+    <button
+      (click)="closePopup()"
+      class="absolute top-4 right-4 text-xl font-bold text-red-950 hover:text-red-700 z-10"
+    >
+      &times;
+    </button>
+
+    <!-- Content -->
+    <div class="text-center text-green-100 relative z-10">
+      <div class="text-5xl mb-2">
+        <i class="fas fa-check-circle"></i>
+      </div>
+     <h2 class="text-2xl font-bold">Thank you for Visiting My Page!</h2>
+<p class="mb-4">I’m grateful for your time and support. Your interest means a lot to me, and I look forward to connecting with you soon.</p>
+
+      <!-- Buttons -->
+      <!-- <div class="flex justify-center gap-4 mb-4">
+        <button class="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700">Back to homepage</button>
+        <button class="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700">Visit the blog</button>
+      </div> -->
+
+      <!-- Social Icons -->
+      <div>
+        <h3 class="font-semibold mb-2">Let’s Connect!</h3>
+        <div class="flex justify-center space-x-4 text-xl text-white">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/_subbu_ram_/"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
     </div>
 
+    
     <!-- ➡️ Right Image with Brackets -->
     <div class="relative flex justify-center items-center w-full overflow-hidden px-4 sm:px-0 animate-fade-in animate-delay-1000">
       <!-- Glow Circle -->
@@ -42,7 +91,7 @@
 
       <!-- Main Image -->
       <img
-        src="assets/bg-img/chat.png"
+        src="assets/subbbu.png"
         alt="Developer"
         class="relative z-20 w-[360px] sm:w-[500px] md:w-[700px] lg:w-[880px] rounded-lg shadow-lg animate__animated animate__zoomIn animate__delay-1s"
       />
@@ -160,7 +209,7 @@ style="background-image: url('assets/bg-img/skill.jpg');">
      <!-- Profile Image with Blinking Animation -->
 <div class="animate-blink border-[4px] sm:border-[6px] border-orange-500 w-[180px] sm:w-[220px] md:w-[260px] h-[180px] sm:h-[220px] md:h-[260px] rounded-full overflow-hidden shadow-xl z-10">
   <img 
-    src="assets/bg-img/subbu1.png" 
+    src="assets/subbu.jpg" 
     alt="Profile" 
     class="w-full h-full object-cover"
   />
@@ -175,7 +224,8 @@ style="background-image: url('assets/bg-img/skill.jpg');">
 
     <!-- Description -->
     <p class="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed max-w-2xl mx-auto mb-8 px-2 sm:px-0">
-      Hi I'm Jack Smith. I'm a passionate UI/UX Designer and Full Stack Developer based in India. I specialize in building responsive, scalable web applications with clean code, intuitive design, and seamless user experiences.
+      Hi, I’m Subbu. I’m a dedicated Web Developer and Mobile Application Developer. I specialize in creating responsive websites and high-performance mobile apps with clean code, modern design, and seamless user experiences.
+
     </p>
 
     <!-- Download Button -->
@@ -335,26 +385,26 @@ style="background-image: url('assets/bg-img/skill.jpg');">
 <div class="p-4 text-white flex flex-col items-center md:items-start space-y-4">
   <!-- Image -->
   <img
-    src="assets/bg-img/contact-us.jpg"
+    src="assets/contact.jpg"
     alt="Profile"
     class="rounded-xl object-cover w-full h-[180px] md:h-[220px] mb-2"
   />
 
   <!-- Content Below Image -->
-  <div class="text-center md:text-left w-full space-y-2">
-    <h2 class="text-2xl md:text-3xl font-bold text-white">Get in touch</h2>
-    <p class="italic font-semibold text-white">
-      We believe sustainability is vitally important.
-    </p>
-    <p class="text-white text-sm leading-relaxed">
-      Etiam sit amet convallis erat – class aptent taciti sociosqu ad litora torquent per conubia!
-      Maecenas gravida lacus. Lorem etiam sit amet convallis erat.
-    </p>
-  </div>
+ <div class="text-center md:text-left w-full space-y-2">
+  <h2 class="text-2xl md:text-3xl font-bold text-white">Get in touch</h2>
+  <p class="italic font-semibold text-white">
+    I’d love to hear from you!
+  </p>
+  <p class="text-white text-sm leading-relaxed">
+    Whether you have a project in mind, want to collaborate, or just wish to say hello, feel free to reach out. I’m always open to discussing new ideas and opportunities.
+  </p>
+</div>
+
 
   <!-- Social Icons -->
  <div class="flex space-x-4 mt-4">
-  <a href="#" class="text-white text-2xl hover:text-pink-400" aria-label="Instagram">
+  <a href="https://www.instagram.com/_subbu_ram_/" class="text-white text-2xl hover:text-pink-400" aria-label="Instagram">
     <i class="fab fa-instagram"></i>
   </a>
   <a href="https://wa.me/yourphonenumber" target="_blank" class="text-white text-2xl hover:text-green-400" aria-label="WhatsApp">
