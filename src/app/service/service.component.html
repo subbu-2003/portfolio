@@ -1,0 +1,45 @@
+<!-- Hero Section -->
+<div class="relative w-full h-[60vh] bg-cover bg-center" style="background-image: url('/assets/sweet.jpg');">
+  <!-- Dark Overlay -->
+ <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center px-4">
+  <h1 class="text-white text-4xl md:text-6xl font-bold mb-4">My Service</h1>
+  <p class="text-gray-200 text-lg md:text-xl max-w-2xl">
+    I specialize in Web Development and Mobile App Development to create modern, responsive, and user-friendly digital solutions.
+  </p>
+</div>
+</div>
+
+<!-- Service Content -->
+<div class="bg-cover bg-center py-16 px-6" style="background-image: url('/assets/bg-img/bg.jpg');">
+
+  <div class="space-y-16">
+    <div *ngFor="let service of services" 
+         class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+      <!-- Left Image -->
+      <div class="flex justify-center">
+        <img [src]="service.image" [alt]="service.title"
+             class="rounded-lg shadow-lg w-full max-w-sm object-cover">
+      </div>
+
+      <!-- Right Content -->
+      <div class="text-white">
+        <h3 class="text-2xl font-semibold mb-4">{{ service.title }}</h3>
+        <p class="mb-4">{{ service.description }}</p>
+        <ul class="space-y-2">
+          <li *ngFor="let point of service.details" class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" 
+                 class="h-5 w-5 text-yellow-400 mr-2 mt-1" 
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M5 13l4 4L19 7"/>
+            </svg>
+            {{ point }}
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
