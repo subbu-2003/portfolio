@@ -38,6 +38,14 @@ export class SectionComponent implements AfterViewInit {
       link: '#',
       technologies: ['Angular', 'HTML','CSS', 'Tailwind CSS']
     },
+
+      {
+      image: 'assets/appicon.png',
+      title: 'Oncallacting Driver - End User Platform',
+      description: 'Developed the Oncallacting Driver End User Platform, handling both frontend and backend development along with database design. The platform enables users to seamlessly access driver services with efficient functionality and a smooth user experience."',
+      link: '#',
+      technologies: ['Angular','Bootstrap', '.Net Core Web Api','MySql','AWS']
+    },
    {
   image: 'assets/bg-img/e2o.jpg',
   title: 'E2o Technologies – Static & CRM Software Development',
@@ -51,10 +59,16 @@ export class SectionComponent implements AfterViewInit {
   image: 'assets/najm.jpg',
   title: 'NAJM Engineering Limited – Static Website Development',
   description: 'Developed a modern and responsive static website for NAJM Engineering Limited. The site was crafted with a clean design and optimized performance to showcase their engineering services effectively.',
-  link: '#',
+  link: 'https://najmengineeringltd.com/',
   technologies: ['HTML', 'CSS', 'Bootstrap', 'JavaScript']
-}
-,
+},
+{
+  image: 'assets/looo.png',
+  title: 'MK Agencies – Static Website Development',
+  description: 'Developed a responsive and user-friendly grocery website for MK Agencies. The site features a clean layout and smooth navigation, built with modern web standards to effectively display grocery products and offers.',
+  link: 'https://mkagenciesmdu.in/',
+  technologies: ['HTML', 'CSS', 'Bootstrap', 'JavaScript']
+},
     {
       image: 'assets/bg-img/kavi.png',
       title: 'Kavi Travels Management Software',
